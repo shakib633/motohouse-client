@@ -36,8 +36,14 @@ const SignUp = () => {
             signUpError=<p> the email already regestered.</p>
           }
       return (
-        <div className="body-container">
+        <div className="body-container text-center mx-auto m-3">
           <p className="text-center mt-2 fs-3 fw-bold text-success "> Sign up Here</p>
+          <div className="signup body"> 
+            <div className="signIn-img m-3">
+       <img src="https://i.ibb.co/4RR5gSZ/sign-In-removebg-preview-2.jpg" alt="sign-In-removebg-preview-2" border="0"></img>  
+     
+        </div>
+        <div className="m-3"> 
           <Form  className="text-center"onSubmit={handleSignUp}>
           <Form.Group className="" controlId="formBasicName">
           <Form.Label></Form.Label>
@@ -48,7 +54,7 @@ const SignUp = () => {
          <Form.Control className=" shadow-lg "ref={emailRef} type="email" placeholder="Enter email" required />
        </Form.Group>
         {signUpError}
-        <Form.Group className="" controlId="formBasicPassword">
+        <Form.Group  controlId="formBasicPassword">
           <Form.Label></Form.Label>
           <Form.Control className=" shadow-lg" ref={passwordRef} type="password" placeholder="Enter password" required />
         </Form.Group>
@@ -59,6 +65,10 @@ const SignUp = () => {
            <p>Have Already An account? 
               <Link className="m-2 text-decoration-none" to="/signin">please sign in</Link></p>
           </p>
+          </div>
+            
+          </div>
+          
           <SocialLogin></SocialLogin>
         </div>
     );

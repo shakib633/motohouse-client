@@ -1,0 +1,30 @@
+.signup{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+.body{
+    background-color: #c7e7dc
+
+}
+.signIn-img{
+    margin-left: 12px;
+}
+@media only screen and (max-width:576px) {
+
+    .signup{
+        grid-template-columns: repeat(1, 1fr)
+    }
+    .signIn-img{
+        display:none;
+    }
+}
+    @media only screen and (min-width:577px)and (max-width:992px){
+        .signup{
+            grid-template-columns: repeat(1, 1fr)
+        }
+        .signIn-img{
+            display:none;
+        }
+        
+    }

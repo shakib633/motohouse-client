@@ -11,12 +11,12 @@ const InventoryUpdate = () => {
         fetch(url)
         .then(res=>res.json())
         .then(data=>setProduct(data))
-    },[]);
+    }, [product]);
 
-    const addQuantity = e =>{
-        e.preventDefault();
-        const previousQuantity = e.target.quantity.value;
-        const quantity= parseInt(previousQuantity)+parseInt(product.quantity)
+    const addQuantity = (event) =>{
+        event.preventDefault();
+        const previousQuantity = event.target.quantity.value;
+        const quantity= parseInt(previousQuantity)+ parseInt(product.quantity);
 
         const url =`http://localhost:5000/product/${id}`;
         fetch(url, {
@@ -30,10 +30,10 @@ const InventoryUpdate = () => {
         .then(data=>{console.log(data)
         })
 
-        toast.info('Successfully',{
+        toast.info('Successfully Stock',{
             position: 'top-center'
         });
-        e.target.reset();
+        event.target.reset();
     }
 
     //delivering
@@ -57,21 +57,30 @@ const InventoryUpdate = () => {
         });
     }
     return (
-        <div>
+        <div className="mx-auto">
 
-            <div><p> {product.name}</p>
-            <p>
-                {product.supplier}
-            </p>
-            <p>Quantity: {product.quantity}</p>
-            <button onClick={()=> handleDeliverBtn()}>Delivered</button>
+            <div>
+                <img src={product.picture}></img>
+                <p> Model: {product.name}</p>
+                <p>Type: {product.type}</p>
+                <p> Supplier: {product.supplier}</p>
+                <p> Dealer: {product.dealer}</p>
+                <p> About: {product.about}</p>
+                <p> price: {product.price}</p>
+                <p> Quantity : {product.quantity}</p>
+                <p className="text-center"> 
+               
+           <button className="btn btn-primary center mb-2"onClick={()=> handleDeliverBtn()}>Delivered</button>
+           </p>
             <form onSubmit={addQuantity}>
-                <input type="number" name="quantity" id="" required placeholder="quantity" />
-                <input type="submit" value="Restock" />
+                <input className=" d-block mx-auto" type="number" name="Quantity" id="" required placeholder="Quantity" />
+                <br></br>
+                <input className="mx-auto d-block btn btn-info shadow fw-bold text-white" type="submit" value="Restock" />
                 <ToastContainer></ToastContainer>
-            </form>
+            </form> 
+           
             </div>
-           <Link to='/manageinventories' className='btn btn-primary text-center'>Manage Inventory</Link>
+           <Link to='/manageinventories' className=' text-center text-decoration-none d-block mx-auto'>Manage Inventory</Link>
         </div>
     );
 };
