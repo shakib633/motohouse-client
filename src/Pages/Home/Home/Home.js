@@ -1,19 +1,37 @@
-import React from 'react';
-import Carousel from '../Carousel/Banner';
-import Products from '../Products/Products';
-import Summary from '../Summary/Summary';
+import React from "react";
+import { Link } from "react-router-dom";
+import Cart from "../../Cart/Cart";
+import Carousel from "../Carousel/Banner";
+import Summary from "../Summary/Summary";
+import useProducts from "./../../../hooks/useProducts/useProducts";
+import css from "./Home.css"
 
 const Home = () => {
-    
-    return (
-        <div>
-            
-            <Carousel></Carousel>
-            <Summary></Summary>
-            <Products></Products>
-             
-        </div>
-    );
+  const [products] = useProducts();
+  const sliceProducts = products.slice(0, 6);
+
+  return (
+    <div>
+      <Carousel></Carousel>
+
+      <Summary></Summary>
+
+      <div>
+      <h2 className="text-center mt-3 text-primary fw-bold">Our Products</h2>
+      <p className="text-center text-primary fw-bold mb-2"> ______________________________________________</p>
+      </div>
+      <div className="Product-container ">
+        {sliceProducts.map((data) => (
+          <Cart key={data._id} data={data}></Cart>
+        ))}
+      </div>
+      <p className="text-center fw-bold">
+        <Link to="/manageinventories" className="text-decoration-none ">
+          Manage Inventories
+        </Link>
+      </p>
+    </div>
+  );
 };
 
 export default Home;
