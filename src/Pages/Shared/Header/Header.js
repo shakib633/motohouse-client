@@ -9,6 +9,8 @@ const Header = () => {
   const [user]=useAuthState(auth);
    const handleSignOut=()=>{
           signOut(auth) 
+
+
    }
   return (
     <>
@@ -35,11 +37,25 @@ const Header = () => {
               <Nav.Link className="text-black fw-bold" as={Link} to="/about">
                 About
               </Nav.Link>
-              <Nav.Link className="text-black fw-bold" as={Link} to="/Blogs">
+
+             
+              
+              
+              </Nav>
+              {user && <>
+                               
+                <Nav.Link className="text-black fw-bold" as={Link} to="/Blogs">
                 Blogs
               </Nav.Link>
-              
-            </Nav>
+              <Nav.Link className="text-black fw-bold" as={Link} to="/additem">
+                Add Item
+              </Nav.Link>
+              <Nav.Link className="text-black fw-bold" as={Link} to="/manageinventories">
+                Manage
+              </Nav.Link>
+                            </>}
+
+            
             <Nav.Link
                 className="text-primary fw-bold"
                as={Link} to="signup"
@@ -57,10 +73,16 @@ const Header = () => {
               >
                 sign in
               </Nav.Link>
+              
             }
+            {user && <>
+                                <Nav.Link className='text-white' as={Link} to="/manageinventories">Manage Items</Nav.Link>
+                                <Nav.Link className='text-white' as={Link} to="/additem">Add Item</Nav.Link>
+                            </>}
             </Nav>
           </Navbar.Collapse>
         </Container>
+        
       </Navbar>
     </>
   );

@@ -3,7 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Allproducts = ({product}) => {
-    const{_id,price,name,about,picture,dealer,quantity,type}=product;
+    const{_id,price,name,about,picture,dealer,quantity,type, supplier}=product;
     const navigate=useNavigate()
     const navigateToUpdate = (id)=>{
         navigate(`/product/${id}`);
@@ -23,14 +23,17 @@ const Allproducts = ({product}) => {
     return (
         <div className="border-none shadow-lg rounded-lg m-2 p-2 ">
     
-      <img className="mx-3" src={picture} alt='/'></img>
-      <h4 className="text-center mt-2 fw-bold mx-5">{name}</h4>
-      <p className="text-center text-primary">{type}</p>
+    <img className="mx-3" src={picture} alt='/'></img>
+      <h4 className="text-center mt-2 fw-bold mx-5"> Model : {name}</h4>
+      <p className="mx-5">Type :{type}</p>
+      <p className=" mx-5">Supplier: {supplier}</p>
+      <p className="mx-5">Dealer{dealer}</p>
 
-      <p className="fs-2 mx-5 fw-bold text-danger">{price}</p>
-      <p className="mx-5"><small className='dot'>⚫</small>{dealer}</p>
-      <p className="mx-5"><small className='dot'>⚫ Quantity: </small>{quantity}</p>
-      <p className="mx-5"><small className='dot'>⚫</small>{about}</p>
+      <p className=" mx-5 ">About :{about}</p>
+      <p className=" mx-5 ">Price :{price}</p>
+      
+      
+      <p className="mx-5">Quantity :{quantity}</p>
       <button className='mx-5 mb-2 fw-bold rounded' onClick={()=>handleProduct(product._id)}>Delete</button>
       <button className='mx-5 mb-2 fw-bold rounded' onClick={()=>navigateToUpdate(_id)}>Update</button>
         </div>

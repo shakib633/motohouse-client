@@ -4,7 +4,7 @@ import { toast, ToastContainer } from 'react-toastify';
 
 const InventoryUpdate = () => {
     const{id}=useParams();
-    const [product, setProduct]=useState({})
+    const [product, setProduct]=useState({});
 
     useEffect(()=>{
         const url =`http://localhost:5000/product/${id}`;
@@ -15,8 +15,9 @@ const InventoryUpdate = () => {
 
     const addQuantity = (event) =>{
         event.preventDefault();
-        const previousQuantity = event.target.quantity.value;
-        const quantity= parseInt(previousQuantity)+ parseInt(product.quantity);
+        const oldQuantity = event.target.quantity.value;
+        const quantity= parseInt(oldQuantity) + parseInt(product.quantity);
+        
 
         const url =`http://localhost:5000/product/${id}`;
         fetch(url, {
@@ -27,7 +28,7 @@ const InventoryUpdate = () => {
             body: JSON.stringify({quantity})
         })
         .then(res=>res.json())
-        .then(data=>{console.log(data)
+        .then(data=>{console.log(data);
         })
 
         toast.info('Successfully Stock',{
@@ -38,8 +39,8 @@ const InventoryUpdate = () => {
 
     //delivering
     const handleDeliverBtn=()=>{
-        const previousQuantity=product.quantity;
-        const quantity=parseInt(previousQuantity) - 1;
+        const oldQuantity=product.quantity;
+        const quantity=parseInt(oldQuantity) - 1;
         const url=`http://localhost:5000/product/${id}`;
         fetch(url,{
             method: 'PUT',
@@ -73,7 +74,7 @@ const InventoryUpdate = () => {
            <button className="btn btn-primary center mb-2"onClick={()=> handleDeliverBtn()}>Delivered</button>
            </p>
             <form onSubmit={addQuantity}>
-                <input className=" d-block mx-auto" type="number" name="Quantity" id="" required placeholder="Quantity" />
+                <input className=" d-block mx-auto" type="number" name="quantity" id="" required placeholder="Quantity" />
                 <br></br>
                 <input className="mx-auto d-block btn btn-info shadow fw-bold text-white" type="submit" value="Restock" />
                 <ToastContainer></ToastContainer>

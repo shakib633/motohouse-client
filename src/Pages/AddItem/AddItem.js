@@ -1,7 +1,6 @@
 import React from 'react';
-import { ToastContainer } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 const AddItem = () => {
     const{register,handleSubmit}= useForm();
@@ -25,7 +24,14 @@ const AddItem = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" placeholder="Name"{...register("name")}></input>
+      <input type="text" placeholder="photo URL"{...register("picture")}></input>
+      <input type="text" placeholder="Type :"{...register("type")}></input>
+      <input type="text" placeholder="Model :"{...register("model")}></input>
+      <input type="text" placeholder="Supplier :"{...register("supplier")}></input>
+      <input type="text" placeholder="Dealer :"{...register("dealer")}></input>
+      <input type="text" placeholder="About :"{...register("about")}></input>
+      <input type="number" placeholder="Price :"{...register("price")}></input>
+      <input type="number" placeholder="Quantity :"{...register("quantity")}></input>
     <input value="Add Item" type="submit"></input>
     <ToastContainer />
     </form>

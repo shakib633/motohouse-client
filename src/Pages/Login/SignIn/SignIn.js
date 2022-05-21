@@ -85,15 +85,19 @@ const SignIn = () => {
        </Button>
        <ToastContainer/>
        </Form>
+
+
        
 
-       <p className="mt-3"> Have No Account ? <Link className="text-decoration-none fw-bold" to="/signup" > Sign UP</Link></p>
-       <p>Forget Your Password ? <Button variant='link' className="text-decoration-none"><span onClick={resetPassword}></span>Reset Password</Button> </p>
+       <p className="mt-3"> Have No Account ? <Link className="text-decoration-none fw-bold" to="/signup" >Sign UP</Link></p>
+       <p>Forget Your Password ?<Button variant='link' className="text-decoration-none fw-bold"><span onClick={resetPassword}></span>Reset Password</Button> </p>
+
+       <SocialLogin></SocialLogin>
+
        </div>
       
 
      
-     <SocialLogin></SocialLogin>
 
 
      

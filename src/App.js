@@ -11,6 +11,7 @@ import InventoryUpdate from "./Pages/InventoryUpdate/InventoryUpdate";
 import MyItems from "./Pages/MyItems/MyItems";
 import SignIn from './Pages/Login/SignIn/SignIn';
 import SignUp from "./Pages/Login/SignUp/SignUp";
+import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 
 
 
@@ -23,15 +24,16 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/signin" element={<SignIn></SignIn>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
-        <Route path="/manageinventories" element={<ManageInventories></ManageInventories>}></Route>
-        <Route path="/product/:id" element={<InventoryUpdate></InventoryUpdate>}></Route>
-        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/additem" element={<AddItem></AddItem>}></Route>
         <Route path="/myitems" element={<MyItems></MyItems>}></Route>
+        <Route path="/manageinventories" element={<ManageInventories></ManageInventories>}></Route>
+        <Route path="/product/:id" element={<RequireAuth><InventoryUpdate></InventoryUpdate></RequireAuth>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
 
-        <Route path="/notfound" element={<NotFound></NotFound>}></Route>
+        
+
+        <Route path="/*" element={<NotFound></NotFound>}></Route>
 
         </Routes>
         <Footer></Footer>

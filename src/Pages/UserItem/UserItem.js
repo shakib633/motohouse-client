@@ -4,7 +4,7 @@ import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
 
 const UserItem = ({product}) => {
-    const{name,price,supplier} = product;
+    const{name,price,supplier ,quantity} = product;
     const[user,loading]=useAuthState(auth);
     let userEmail = user?.email;
     if(loading) {
@@ -21,12 +21,13 @@ const UserItem = ({product}) => {
             .then(data=> console.log(data))
         }
     }
-    
+   
         return (
             <div>
                 <p>name:{name}</p>
                 <p>price:{price}</p>
                 <p>suplier:{supplier}</p>
+                <p>{quantity}</p>
                 <button onClick={()=> handleDeletBtn(product._id)}>Delete</button>
             </div>
         );
