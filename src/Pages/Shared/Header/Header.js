@@ -23,8 +23,7 @@ const Header = () => {
       >
         <Container>
           <Navbar.Brand as={Link} to="/">
-            <p> Moto House </p>
-            <span>Your ride Partner</span>
+     <p className=""> <img className="image-head mt-" src="https://i.ibb.co/xm2pVHQ/aaa-removebg-preview.png" alt="aaa-removebg-preview" border="0"></img></p>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -32,8 +31,8 @@ const Header = () => {
               <Nav.Link className="text-black fw-bold" as={Link} to="/home">
                 Home
               </Nav.Link>
-              <Nav.Link className="text-black fw-bold" as={Link} to="/about">
-                About
+              <Nav.Link className="text-black fw-bold" as={Link} to="/services">
+                Services
               </Nav.Link>
               <Nav.Link className="text-black fw-bold" as={Link} to="/Blogs">
                 Blogs

@@ -1,5 +1,5 @@
-import { Button } from 'bootstrap';
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const Allproducts = ({product}) => {
@@ -34,8 +34,8 @@ const Allproducts = ({product}) => {
       
       
       <p className="mx-5">Quantity :{quantity}</p>
-      <button className='mx-5 mb-2 fw-bold rounded' onClick={()=>handleProduct(product._id)}>Delete</button>
-      <button className='mx-5 mb-2 fw-bold rounded' onClick={()=>navigateToUpdate(_id)}>Update</button>
+      <Button className='mx-5 mb-2 border shadow-lg bg-danger fw-bold rounded' onClick={()=>handleProduct(product._id)}>Delete</Button>
+      <Button className='mx-5 mb-2 bg-success border fw-bold rounded' onClick={()=>navigateToUpdate(_id)}>Update</Button>
         </div>
     );
 };

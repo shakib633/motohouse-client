@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Cart from "../../Cart/Cart";
+import ChooseUs from "../../ChooseUs/ChooseUs";
 import Carousel from "../Carousel/Banner";
 import Summary from "../Summary/Summary";
 import useProducts from "./../../../hooks/useProducts/useProducts";
@@ -25,11 +26,15 @@ const Home = () => {
           <Cart key={data._id} data={data}></Cart>
         ))}
       </div>
-      <p className="text-center fw-bold">
+      <p className="text-center mt-3 fw-bold">
         <Link to="/manageinventories" className="text-decoration-none ">
-          Manage Inventories
+          Manage Inventories 🠲
         </Link>
       </p>
+
+      <div> 
+        <ChooseUs></ChooseUs>
+      </div>
     </div>
   );
 };

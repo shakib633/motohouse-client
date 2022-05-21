@@ -22,7 +22,7 @@ const AddItem = () => {
     });
     }
     return (
-        <div>
+        <div >
             <form onSubmit={handleSubmit(onSubmit)}>
       <input type="text" placeholder="photo URL"{...register("picture")}></input>
       <input type="text" placeholder="Type :"{...register("type")}></input>

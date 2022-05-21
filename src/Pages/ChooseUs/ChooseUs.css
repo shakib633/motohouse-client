@@ -1,26 +1,32 @@
-.background{
-    background: rgba(237, 230, 230, 0.712);
+.image{
+    height:140px;
+    width:140px;
 }
 
-.all-product-container{
+
+.choose-container{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+ grid-template-columns: repeat(4 ,1fr);
+}
+
+.choose-bg{
+    background: rgba(236, 249, 247, 0.497);
 }
 
 @media only screen and (max-width:576px){
-    .all-product-container{
+    .choose-container{
         grid-template-columns: repeat(1 ,1fr)
 
     }
 }
 
 @media only screen and (min-width:577px) and (max-width:992px){
-    .all-product-container{
+    .choose-container{
         grid-template-columns: repeat(2, 1fr)
     }
 }
 @media only screen and (min-width:993px) and (max-width:1400px){
-    .all-product-container{
-        grid-template-columns: repeat(3, 1fr)
+    .choose-container{
+        grid-template-columns: repeat(4, 1fr)
     }
 }

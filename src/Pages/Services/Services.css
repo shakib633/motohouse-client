@@ -1,0 +1,26 @@
+.service-container{
+    display: grid;
+ grid-template-columns: repeat(4 ,1fr);
+}
+
+.service-bg{
+    background: rgba(236, 249, 247, 0.497);
+}
+
+@media only screen and (max-width:576px){
+    .service-container{
+        grid-template-columns: repeat(2 ,1fr)
+
+    }
+}
+
+@media only screen and (min-width:577px) and (max-width:992px){
+    .service-container{
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+@media only screen and (min-width:993px) and (max-width:1400px){
+    .service-container{
+        grid-template-columns: repeat(4, 1fr)
+    }
+}

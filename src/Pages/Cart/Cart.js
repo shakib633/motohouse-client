@@ -20,9 +20,9 @@ const Cart = ({data}) => {
       <p className=" mx-5 ">About :{about}</p>
       <p className=" mx-5 ">Price :{price}</p>
       
-      
+    
       <p className="mx-5">Quantity :{quantity}</p>
-      <Button className='mx-5 mb-2 fw-bold rounded' onClick={()=>navigateToUpdate(_id)}>Update</Button>
+      <Button className='mx-5 mb-2 bg-info border shadow-lg fw-bold ' onClick={()=>navigateToUpdate(_id)}>Update</Button>
         </div>
     );
 };
