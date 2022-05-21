@@ -4,7 +4,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
-
+import css from "./Header.css"
 const Header = () => {
   const [user]=useAuthState(auth);
    const handleSignOut=()=>{
@@ -23,19 +23,20 @@ const Header = () => {
       >
         <Container>
           <Navbar.Brand as={Link} to="/">
-            <h3 className="fw-bold fs-2"> Moto House</h3>
-            <p>
-              <small className="text-danger">Kept Your sweet Moments</small>
-            </p>
+            <p> Moto House </p>
+            <span>Your ride Partner</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
+            <Nav className="me-auto mx-5">
               <Nav.Link className="text-black fw-bold" as={Link} to="/home">
                 Home
               </Nav.Link>
               <Nav.Link className="text-black fw-bold" as={Link} to="/about">
                 About
+              </Nav.Link>
+              <Nav.Link className="text-black fw-bold" as={Link} to="/Blogs">
+                Blogs
               </Nav.Link>
 
              
@@ -44,9 +45,7 @@ const Header = () => {
               </Nav>
               {user && <>
                                
-                <Nav.Link className="text-black fw-bold" as={Link} to="/Blogs">
-                Blogs
-              </Nav.Link>
+                
               <Nav.Link className="text-black fw-bold" as={Link} to="/additem">
                 Add Item
               </Nav.Link>

@@ -12,7 +12,7 @@ const Allproducts = ({product}) => {
     const handleProduct=product_id=>{
         const proceed=window.confirm("Are You sure?");
         if (proceed){
-            const url =`http://localhost:5000/product/${product_id}`;
+            const url =`https://shrouded-sands-75928.herokuapp.com/product/${product_id}`;
             fetch(url,{
                 method: 'DELETE',
             })

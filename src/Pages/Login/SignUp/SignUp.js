@@ -48,14 +48,14 @@ const SignUp = () => {
     return (
         <section className='sign-up'>
             
-            <div className=''>
-            <h5 className='text-center fw-bold'>Sign Up to Fresh Fruit Warehouse</h5>
+            <div className='body'>
+            <h5 className='text-center  mb-3 fw-bold'>Sign UP To <span className="text-success">MotoHouse</span></h5>
 
-                <div className='d-flex signUp-container'>
-                    <div> 
+                <div className='d-flex m-3 signUp-container'>
+                    <div className='signup-img mt-2'> 
                     <img src="https://i.ibb.co/n06q99z/signup.png" alt="signup" border="0"></img>
                     </div>
-                    <div className='sign-up-form-container'>
+                    <div className='sign-up-form-container mt-2'>
 
                         <Form onSubmit={handleSignUp}>
                             <Form.Group className="mb-3" controlId="formBasicName">

@@ -41,7 +41,7 @@ const InventoryUpdate = () => {
     const handleDeliverBtn=()=>{
         const oldQuantity=product.quantity;
         const quantity=parseInt(oldQuantity) - 1;
-        const url=`http://localhost:5000/product/${id}`;
+        const url=`https://shrouded-sands-75928.herokuapp.com/product/${id}`;
         fetch(url,{
             method: 'PUT',
             headers: { 
