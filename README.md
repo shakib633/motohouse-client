@@ -1,5 +1,5 @@
 
-* Home page has a  navbar, banner, a maximum of 6 items, a footer, and two extra sections named 'services, about'.
+* Home page has a  navbar, banner, a maximum of 6 items, a footer, and two extra sections named 'why you choose us, about'.
 * Every item has a relevant name, image, short description, price, quantity, supplier name, dealer name and an update button.
 * Clicking on the update button will take the user to the inventory/:id route. This route will be a private/protected route.
 * If the user is not logged in, the private route redirects to the login page . After login, the user will be redirected to the page he/she wanted to go to. After reloading the page of a private route, the user is not redirected to the login page.
