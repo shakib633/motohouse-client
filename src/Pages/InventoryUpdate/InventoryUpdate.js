@@ -7,7 +7,7 @@ const InventoryUpdate = () => {
     const [product, setProduct]=useState({});
 
     useEffect(()=>{
-        const url =`http://localhost:5000/product/${id}`;
+        const url =`https://shrouded-sands-75928.herokuapp.com/product/${id}`;
         fetch(url)
         .then(res=>res.json())
         .then(data=>setProduct(data))
@@ -19,7 +19,7 @@ const InventoryUpdate = () => {
         const quantity= parseInt(oldQuantity) + parseInt(product.quantity);
         
 
-        const url =`http://localhost:5000/product/${id}`;
+        const url =`https://shrouded-sands-75928.herokuapp.com/product/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: { 
